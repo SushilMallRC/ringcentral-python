@@ -5,10 +5,6 @@ on:
       - master
       - main
       - tesGitHubPages
-  pull_request:
-    branches:
-      - master
-      - main
 permissions:
   contents: write
 jobs:
