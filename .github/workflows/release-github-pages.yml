@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - main
+      - tesGitHubPages
   pull_request:
     branches:
       - master
