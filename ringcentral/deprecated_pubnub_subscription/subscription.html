@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>ringcentral.deprecated_pubnub_subscription.subscription API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ringcentral.deprecated_pubnub_subscription.subscription</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+# encoding: utf-8
+import json
+import base64
+from threading import Timer
+from observable import Observable
+from .events import Events
+from ..core import tostr, clean_decrypted
+
+RENEW_HANDICAP = 60
+stripped = lambda s: &#39;&#39;.join([c for c in s if ord(c) &gt; 31 or ord(c) == 9])
+
+class Subscription(Observable):
+    def __init__(self, platform):
+        Observable.__init__(self)
+        self._platform = platform
+        self._event_filters = []
+        self._timeout = None
+        self._subscription = {
+            &#39;eventFilters&#39;: [],
+            &#39;expirationTime&#39;: &#39;&#39;,  # 2014-03-12T19:54:35.613Z
+            &#39;expiresIn&#39;: 0,
+            &#39;deliveryMode&#39;: {
+                &#39;transportType&#39;: &#39;PubNub&#39;,
+                &#39;encryption&#39;: False,
+                &#39;address&#39;: &#39;&#39;,
+                &#39;subscriberKey&#39;: &#39;&#39;,
+                &#39;secretKey&#39;: &#39;&#39;
+            },
+            &#39;id&#39;: &#39;&#39;,
+            &#39;creationTime&#39;: &#39;&#39;,  # 2014-03-12T19:54:35.613Z
+            &#39;status&#39;: &#39;&#39;,  # Active
+            &#39;uri&#39;: &#39;&#39;
+        }
+        self._pubnub = None
+
+    # Retrieve the PubNub instance associated with this object.
+    def pubnub(self):
+        return self._pubnub
+
+    def register(self, events=None):
+        &#34;&#34;&#34;
+            Register for events. If the connection is alive, renews the registration; otherwise, subscribes.
+
+            Args:
+                events (list, optional): List of events to register for.
+
+            Returns:
+                obj: Result of renewal or subscription.
+        &#34;&#34;&#34;
+        if self.alive():
+            return self.renew(events=events)
+        else:
+            return self.subscribe(events=events)
+
+    def add_events(self, events):
+        &#34;&#34;&#34;
+        Add additional events to be filtered.
+
+        Args:
+            events (list): List of events to add.
+        &#34;&#34;&#34;
+        self._event_filters += events
+        pass
+
+    def set_events(self, events):
+        self._event_filters = events
+
+    def subscribe(self, events=None):
+        &#34;&#34;&#34;
+        Subscribe to events using the defined event filters.
+
+        Args:
+            events (list, optional): List of events to subscribe to.
+
+        Raises:
+            Exception: If events are undefined.
+            Exception: If there&#39;s an error during subscription Unsubscribe PUBNUB and trigger subscribeError event.
+
+        Returns:
+            obj: Response object from the subscription request.
+        &#34;&#34;&#34;
+        if events:
+            self.set_events(events)
+
+        if not self._event_filters or len(self._event_filters) == 0:
+            raise Exception(&#39;Events are undefined&#39;)
+
+        try:
+            response = self._platform.post(&#39;/restapi/v1.0/subscription&#39;, body={
+                &#39;eventFilters&#39;: self._get_full_events_filter(),
+                &#39;deliveryMode&#39;: {
+                    &#39;transportType&#39;: &#39;PubNub&#39;
+                }
+            })
+
+            self.set_subscription(response.json_dict())
+            self._subscribe_at_pubnub()
+            self.trigger(Events.subscribeSuccess, response)
+
+            return response
+
+        except Exception as e:
+            self.reset()
+            self.trigger(Events.subscribeError, e)
+            raise
+
+    def renew(self, events=None):
+        &#34;&#34;&#34;
+            Renew the subscription with the current or specified events.
+
+            Args:
+                events (list, optional): List of events to renew the subscription with.
+
+            Raises:
+                Exception: If the subscription is not alive.
+                Exception: If events are undefined.
+                Exception: If there&#39;s an error during renewal Unsubscribe PUBNUB and trigger renewError event.
+
+            Returns:
+                obj: Response object from the renewal request.
+        &#34;&#34;&#34;
+        if events:
+            self.set_events(events)
+
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        if not self._event_filters or len(self._event_filters) == 0:
+            raise Exception(&#39;Events are undefined&#39;)
+
+        self._clear_timeout()
+
+        try:
+            response = self._platform.put(&#39;/restapi/v1.0/subscription/&#39; + self._subscription[&#39;id&#39;], body={
+                &#39;eventFilters&#39;: self._get_full_events_filter()
+            })
+
+            self.set_subscription(response.json_dict())
+            self.trigger(Events.renewSuccess, response)
+
+            return response
+
+        except Exception as e:
+            self.reset()
+            self.trigger(Events.renewError, e)
+            raise
+
+    def remove(self):
+        &#34;&#34;&#34;
+            Remove the subscription.
+
+            Raises:
+                Exception: If the subscription is not alive.
+                Exception: If there&#39;s an error during removal Unsubscribe PUBNUB and trigger removeError event.
+
+            Returns:
+                obj: Response object from the removal request.
+        &#34;&#34;&#34;
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        try:
+            response = self._platform.delete(&#39;/restapi/v1.0/subscription/&#39; + self._subscription[&#39;id&#39;])
+
+            self.reset()
+            self.trigger(Events.removeSuccess, response)
+
+            return response
+
+        except Exception as e:
+            self.reset()
+            self.trigger(Events.removeError, e)
+            raise
+
+    def alive(self):
+        s = self._subscription
+        return s and \
+               (&#39;deliveryMode&#39; in s and s[&#39;deliveryMode&#39;]) and \
+               (&#39;subscriberKey&#39; in s[&#39;deliveryMode&#39;] and s[&#39;deliveryMode&#39;][&#39;subscriberKey&#39;]) and \
+               (&#39;address&#39; in s[&#39;deliveryMode&#39;] and s[&#39;deliveryMode&#39;][&#39;address&#39;])
+
+    def subscription(self):
+        return self._subscription
+
+    def set_subscription(self, data):
+        self._clear_timeout()
+        self._subscription = data
+        self._set_timeout()
+
+    def reset(self):
+        self._clear_timeout()
+        self._unsubscribe_at_pubnub()
+        self._subscription = None
+
+    def destroy(self):
+        self.reset()
+        self.off()
+
+    def _subscribe_at_pubnub(self):
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        from pubnub.pubnub import PubNub
+        from pubnub.pnconfiguration import PNConfiguration
+        from pubnub.callbacks import SubscribeCallback
+        from pubnub.enums import PNStatusCategory
+
+        pnconf = PNConfiguration()
+        pnconf.subscribe_key = self._subscription[&#39;deliveryMode&#39;][&#39;subscriberKey&#39;]
+        self._pubnub = PubNub(pnconf)
+
+        subscription = self
+
+        class SubscribeCallbackImpl(SubscribeCallback):
+            def presence(self, pubnub, presence):
+                pass  # handle incoming presence data
+
+            def status(self, pubnub, status):
+                if status.category == PNStatusCategory.PNUnexpectedDisconnectCategory:
+                    subscription.trigger(Events.connectionError, &#39;Connectivity loss&#39;)
+                    pass
+
+            def message(self, pubnub, pnmessage):  # instance of PNMessageResult
+                subscription._notify(pnmessage.message)
+
+        self._pubnub.add_listener(SubscribeCallbackImpl())
+        self._pubnub.subscribe().channels(self._subscription[&#39;deliveryMode&#39;][&#39;address&#39;]).execute()
+
+    def _notify(self, message):
+        message = self._decrypt(message)
+        self.trigger(Events.notification, message)
+
+    def _decrypt(self, message):
+        &#34;&#34;&#34;
+        Decrypt the message if encryption is enabled in the subscription.
+
+        Args:
+            message (str): Encrypted message.
+
+        Raises:
+            ValueError: If the subscription is not alive.
+            ImportError: If Crypto.Cipher or required modules are not available.
+            Exception: If there&#39;s an error during decryption.
+
+        Returns:
+            dict: Decrypted message.
+        &#34;&#34;&#34;
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        from Crypto.Cipher import AES
+
+        delivery_mode = self._subscription[&#39;deliveryMode&#39;]
+        is_encrypted = (&#39;encryption&#39; in delivery_mode) and (&#39;encryptionKey&#39; in delivery_mode)
+
+        if is_encrypted:
+            key = base64.b64decode(self._subscription[&#39;deliveryMode&#39;][&#39;encryptionKey&#39;])
+            data = base64.b64decode(message)
+            cipher = AES.new(key, AES.MODE_ECB)
+            decrypted = clean_decrypted(tostr(cipher.decrypt(data)))
+            message = stripped(decrypted)
+            message = json.loads(decrypted)
+
+        return message
+
+    def _unsubscribe_at_pubnub(self):
+        if self._pubnub and self.alive():
+            self._pubnub.unsubscribe().channels(self._subscription[&#39;deliveryMode&#39;][&#39;address&#39;]).execute()
+
+    def _get_full_events_filter(self):
+        return [self._platform.create_url(e) for e in self._event_filters]
+
+    def _set_timeout(self):
+        time_to_expiration = self._subscription[&#39;expiresIn&#39;] - RENEW_HANDICAP
+        self._timeout = Timer(time_to_expiration, self.renew)
+        self._timeout.start()
+
+    def _clear_timeout(self):
+        if self._timeout:
+            self._timeout.cancel()
+
+
+if __name__ == &#39;__main__&#39;:
+    pass</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.stripped"><code class="name flex">
+<span>def <span class="ident">stripped</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">stripped = lambda s: &#39;&#39;.join([c for c in s if ord(c) &gt; 31 or ord(c) == 9])</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription"><code class="flex name class">
+<span>class <span class="ident">Subscription</span></span>
+<span>(</span><span>platform)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Event system for python</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Subscription(Observable):
+    def __init__(self, platform):
+        Observable.__init__(self)
+        self._platform = platform
+        self._event_filters = []
+        self._timeout = None
+        self._subscription = {
+            &#39;eventFilters&#39;: [],
+            &#39;expirationTime&#39;: &#39;&#39;,  # 2014-03-12T19:54:35.613Z
+            &#39;expiresIn&#39;: 0,
+            &#39;deliveryMode&#39;: {
+                &#39;transportType&#39;: &#39;PubNub&#39;,
+                &#39;encryption&#39;: False,
+                &#39;address&#39;: &#39;&#39;,
+                &#39;subscriberKey&#39;: &#39;&#39;,
+                &#39;secretKey&#39;: &#39;&#39;
+            },
+            &#39;id&#39;: &#39;&#39;,
+            &#39;creationTime&#39;: &#39;&#39;,  # 2014-03-12T19:54:35.613Z
+            &#39;status&#39;: &#39;&#39;,  # Active
+            &#39;uri&#39;: &#39;&#39;
+        }
+        self._pubnub = None
+
+    # Retrieve the PubNub instance associated with this object.
+    def pubnub(self):
+        return self._pubnub
+
+    def register(self, events=None):
+        &#34;&#34;&#34;
+            Register for events. If the connection is alive, renews the registration; otherwise, subscribes.
+
+            Args:
+                events (list, optional): List of events to register for.
+
+            Returns:
+                obj: Result of renewal or subscription.
+        &#34;&#34;&#34;
+        if self.alive():
+            return self.renew(events=events)
+        else:
+            return self.subscribe(events=events)
+
+    def add_events(self, events):
+        &#34;&#34;&#34;
+        Add additional events to be filtered.
+
+        Args:
+            events (list): List of events to add.
+        &#34;&#34;&#34;
+        self._event_filters += events
+        pass
+
+    def set_events(self, events):
+        self._event_filters = events
+
+    def subscribe(self, events=None):
+        &#34;&#34;&#34;
+        Subscribe to events using the defined event filters.
+
+        Args:
+            events (list, optional): List of events to subscribe to.
+
+        Raises:
+            Exception: If events are undefined.
+            Exception: If there&#39;s an error during subscription Unsubscribe PUBNUB and trigger subscribeError event.
+
+        Returns:
+            obj: Response object from the subscription request.
+        &#34;&#34;&#34;
+        if events:
+            self.set_events(events)
+
+        if not self._event_filters or len(self._event_filters) == 0:
+            raise Exception(&#39;Events are undefined&#39;)
+
+        try:
+            response = self._platform.post(&#39;/restapi/v1.0/subscription&#39;, body={
+                &#39;eventFilters&#39;: self._get_full_events_filter(),
+                &#39;deliveryMode&#39;: {
+                    &#39;transportType&#39;: &#39;PubNub&#39;
+                }
+            })
+
+            self.set_subscription(response.json_dict())
+            self._subscribe_at_pubnub()
+            self.trigger(Events.subscribeSuccess, response)
+
+            return response
+
+        except Exception as e:
+            self.reset()
+            self.trigger(Events.subscribeError, e)
+            raise
+
+    def renew(self, events=None):
+        &#34;&#34;&#34;
+            Renew the subscription with the current or specified events.
+
+            Args:
+                events (list, optional): List of events to renew the subscription with.
+
+            Raises:
+                Exception: If the subscription is not alive.
+                Exception: If events are undefined.
+                Exception: If there&#39;s an error during renewal Unsubscribe PUBNUB and trigger renewError event.
+
+            Returns:
+                obj: Response object from the renewal request.
+        &#34;&#34;&#34;
+        if events:
+            self.set_events(events)
+
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        if not self._event_filters or len(self._event_filters) == 0:
+            raise Exception(&#39;Events are undefined&#39;)
+
+        self._clear_timeout()
+
+        try:
+            response = self._platform.put(&#39;/restapi/v1.0/subscription/&#39; + self._subscription[&#39;id&#39;], body={
+                &#39;eventFilters&#39;: self._get_full_events_filter()
+            })
+
+            self.set_subscription(response.json_dict())
+            self.trigger(Events.renewSuccess, response)
+
+            return response
+
+        except Exception as e:
+            self.reset()
+            self.trigger(Events.renewError, e)
+            raise
+
+    def remove(self):
+        &#34;&#34;&#34;
+            Remove the subscription.
+
+            Raises:
+                Exception: If the subscription is not alive.
+                Exception: If there&#39;s an error during removal Unsubscribe PUBNUB and trigger removeError event.
+
+            Returns:
+                obj: Response object from the removal request.
+        &#34;&#34;&#34;
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        try:
+            response = self._platform.delete(&#39;/restapi/v1.0/subscription/&#39; + self._subscription[&#39;id&#39;])
+
+            self.reset()
+            self.trigger(Events.removeSuccess, response)
+
+            return response
+
+        except Exception as e:
+            self.reset()
+            self.trigger(Events.removeError, e)
+            raise
+
+    def alive(self):
+        s = self._subscription
+        return s and \
+               (&#39;deliveryMode&#39; in s and s[&#39;deliveryMode&#39;]) and \
+               (&#39;subscriberKey&#39; in s[&#39;deliveryMode&#39;] and s[&#39;deliveryMode&#39;][&#39;subscriberKey&#39;]) and \
+               (&#39;address&#39; in s[&#39;deliveryMode&#39;] and s[&#39;deliveryMode&#39;][&#39;address&#39;])
+
+    def subscription(self):
+        return self._subscription
+
+    def set_subscription(self, data):
+        self._clear_timeout()
+        self._subscription = data
+        self._set_timeout()
+
+    def reset(self):
+        self._clear_timeout()
+        self._unsubscribe_at_pubnub()
+        self._subscription = None
+
+    def destroy(self):
+        self.reset()
+        self.off()
+
+    def _subscribe_at_pubnub(self):
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        from pubnub.pubnub import PubNub
+        from pubnub.pnconfiguration import PNConfiguration
+        from pubnub.callbacks import SubscribeCallback
+        from pubnub.enums import PNStatusCategory
+
+        pnconf = PNConfiguration()
+        pnconf.subscribe_key = self._subscription[&#39;deliveryMode&#39;][&#39;subscriberKey&#39;]
+        self._pubnub = PubNub(pnconf)
+
+        subscription = self
+
+        class SubscribeCallbackImpl(SubscribeCallback):
+            def presence(self, pubnub, presence):
+                pass  # handle incoming presence data
+
+            def status(self, pubnub, status):
+                if status.category == PNStatusCategory.PNUnexpectedDisconnectCategory:
+                    subscription.trigger(Events.connectionError, &#39;Connectivity loss&#39;)
+                    pass
+
+            def message(self, pubnub, pnmessage):  # instance of PNMessageResult
+                subscription._notify(pnmessage.message)
+
+        self._pubnub.add_listener(SubscribeCallbackImpl())
+        self._pubnub.subscribe().channels(self._subscription[&#39;deliveryMode&#39;][&#39;address&#39;]).execute()
+
+    def _notify(self, message):
+        message = self._decrypt(message)
+        self.trigger(Events.notification, message)
+
+    def _decrypt(self, message):
+        &#34;&#34;&#34;
+        Decrypt the message if encryption is enabled in the subscription.
+
+        Args:
+            message (str): Encrypted message.
+
+        Raises:
+            ValueError: If the subscription is not alive.
+            ImportError: If Crypto.Cipher or required modules are not available.
+            Exception: If there&#39;s an error during decryption.
+
+        Returns:
+            dict: Decrypted message.
+        &#34;&#34;&#34;
+        if not self.alive():
+            raise Exception(&#39;Subscription is not alive&#39;)
+
+        from Crypto.Cipher import AES
+
+        delivery_mode = self._subscription[&#39;deliveryMode&#39;]
+        is_encrypted = (&#39;encryption&#39; in delivery_mode) and (&#39;encryptionKey&#39; in delivery_mode)
+
+        if is_encrypted:
+            key = base64.b64decode(self._subscription[&#39;deliveryMode&#39;][&#39;encryptionKey&#39;])
+            data = base64.b64decode(message)
+            cipher = AES.new(key, AES.MODE_ECB)
+            decrypted = clean_decrypted(tostr(cipher.decrypt(data)))
+            message = stripped(decrypted)
+            message = json.loads(decrypted)
+
+        return message
+
+    def _unsubscribe_at_pubnub(self):
+        if self._pubnub and self.alive():
+            self._pubnub.unsubscribe().channels(self._subscription[&#39;deliveryMode&#39;][&#39;address&#39;]).execute()
+
+    def _get_full_events_filter(self):
+        return [self._platform.create_url(e) for e in self._event_filters]
+
+    def _set_timeout(self):
+        time_to_expiration = self._subscription[&#39;expiresIn&#39;] - RENEW_HANDICAP
+        self._timeout = Timer(time_to_expiration, self.renew)
+        self._timeout.start()
+
+    def _clear_timeout(self):
+        if self._timeout:
+            self._timeout.cancel()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>observable.core.Observable</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.add_events"><code class="name flex">
+<span>def <span class="ident">add_events</span></span>(<span>self, events)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add additional events to be filtered.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>events</code></strong> :&ensp;<code>list</code></dt>
+<dd>List of events to add.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_events(self, events):
+    &#34;&#34;&#34;
+    Add additional events to be filtered.
+
+    Args:
+        events (list): List of events to add.
+    &#34;&#34;&#34;
+    self._event_filters += events
+    pass</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.alive"><code class="name flex">
+<span>def <span class="ident">alive</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def alive(self):
+    s = self._subscription
+    return s and \
+           (&#39;deliveryMode&#39; in s and s[&#39;deliveryMode&#39;]) and \
+           (&#39;subscriberKey&#39; in s[&#39;deliveryMode&#39;] and s[&#39;deliveryMode&#39;][&#39;subscriberKey&#39;]) and \
+           (&#39;address&#39; in s[&#39;deliveryMode&#39;] and s[&#39;deliveryMode&#39;][&#39;address&#39;])</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.destroy"><code class="name flex">
+<span>def <span class="ident">destroy</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def destroy(self):
+    self.reset()
+    self.off()</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.pubnub"><code class="name flex">
+<span>def <span class="ident">pubnub</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pubnub(self):
+    return self._pubnub</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.register"><code class="name flex">
+<span>def <span class="ident">register</span></span>(<span>self, events=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register for events. If the connection is alive, renews the registration; otherwise, subscribes.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>events</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>List of events to register for.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>obj</code></dt>
+<dd>Result of renewal or subscription.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register(self, events=None):
+    &#34;&#34;&#34;
+        Register for events. If the connection is alive, renews the registration; otherwise, subscribes.
+
+        Args:
+            events (list, optional): List of events to register for.
+
+        Returns:
+            obj: Result of renewal or subscription.
+    &#34;&#34;&#34;
+    if self.alive():
+        return self.renew(events=events)
+    else:
+        return self.subscribe(events=events)</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.remove"><code class="name flex">
+<span>def <span class="ident">remove</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove the subscription.</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>Exception</code></dt>
+<dd>If the subscription is not alive.</dd>
+<dt><code>Exception</code></dt>
+<dd>If there's an error during removal Unsubscribe PUBNUB and trigger removeError event.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>obj</code></dt>
+<dd>Response object from the removal request.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove(self):
+    &#34;&#34;&#34;
+        Remove the subscription.
+
+        Raises:
+            Exception: If the subscription is not alive.
+            Exception: If there&#39;s an error during removal Unsubscribe PUBNUB and trigger removeError event.
+
+        Returns:
+            obj: Response object from the removal request.
+    &#34;&#34;&#34;
+    if not self.alive():
+        raise Exception(&#39;Subscription is not alive&#39;)
+
+    try:
+        response = self._platform.delete(&#39;/restapi/v1.0/subscription/&#39; + self._subscription[&#39;id&#39;])
+
+        self.reset()
+        self.trigger(Events.removeSuccess, response)
+
+        return response
+
+    except Exception as e:
+        self.reset()
+        self.trigger(Events.removeError, e)
+        raise</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.renew"><code class="name flex">
+<span>def <span class="ident">renew</span></span>(<span>self, events=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renew the subscription with the current or specified events.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>events</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>List of events to renew the subscription with.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>Exception</code></dt>
+<dd>If the subscription is not alive.</dd>
+<dt><code>Exception</code></dt>
+<dd>If events are undefined.</dd>
+<dt><code>Exception</code></dt>
+<dd>If there's an error during renewal Unsubscribe PUBNUB and trigger renewError event.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>obj</code></dt>
+<dd>Response object from the renewal request.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def renew(self, events=None):
+    &#34;&#34;&#34;
+        Renew the subscription with the current or specified events.
+
+        Args:
+            events (list, optional): List of events to renew the subscription with.
+
+        Raises:
+            Exception: If the subscription is not alive.
+            Exception: If events are undefined.
+            Exception: If there&#39;s an error during renewal Unsubscribe PUBNUB and trigger renewError event.
+
+        Returns:
+            obj: Response object from the renewal request.
+    &#34;&#34;&#34;
+    if events:
+        self.set_events(events)
+
+    if not self.alive():
+        raise Exception(&#39;Subscription is not alive&#39;)
+
+    if not self._event_filters or len(self._event_filters) == 0:
+        raise Exception(&#39;Events are undefined&#39;)
+
+    self._clear_timeout()
+
+    try:
+        response = self._platform.put(&#39;/restapi/v1.0/subscription/&#39; + self._subscription[&#39;id&#39;], body={
+            &#39;eventFilters&#39;: self._get_full_events_filter()
+        })
+
+        self.set_subscription(response.json_dict())
+        self.trigger(Events.renewSuccess, response)
+
+        return response
+
+    except Exception as e:
+        self.reset()
+        self.trigger(Events.renewError, e)
+        raise</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.reset"><code class="name flex">
+<span>def <span class="ident">reset</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset(self):
+    self._clear_timeout()
+    self._unsubscribe_at_pubnub()
+    self._subscription = None</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.set_events"><code class="name flex">
+<span>def <span class="ident">set_events</span></span>(<span>self, events)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_events(self, events):
+    self._event_filters = events</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.set_subscription"><code class="name flex">
+<span>def <span class="ident">set_subscription</span></span>(<span>self, data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_subscription(self, data):
+    self._clear_timeout()
+    self._subscription = data
+    self._set_timeout()</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.subscribe"><code class="name flex">
+<span>def <span class="ident">subscribe</span></span>(<span>self, events=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Subscribe to events using the defined event filters.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>events</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>List of events to subscribe to.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>Exception</code></dt>
+<dd>If events are undefined.</dd>
+<dt><code>Exception</code></dt>
+<dd>If there's an error during subscription Unsubscribe PUBNUB and trigger subscribeError event.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>obj</code></dt>
+<dd>Response object from the subscription request.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subscribe(self, events=None):
+    &#34;&#34;&#34;
+    Subscribe to events using the defined event filters.
+
+    Args:
+        events (list, optional): List of events to subscribe to.
+
+    Raises:
+        Exception: If events are undefined.
+        Exception: If there&#39;s an error during subscription Unsubscribe PUBNUB and trigger subscribeError event.
+
+    Returns:
+        obj: Response object from the subscription request.
+    &#34;&#34;&#34;
+    if events:
+        self.set_events(events)
+
+    if not self._event_filters or len(self._event_filters) == 0:
+        raise Exception(&#39;Events are undefined&#39;)
+
+    try:
+        response = self._platform.post(&#39;/restapi/v1.0/subscription&#39;, body={
+            &#39;eventFilters&#39;: self._get_full_events_filter(),
+            &#39;deliveryMode&#39;: {
+                &#39;transportType&#39;: &#39;PubNub&#39;
+            }
+        })
+
+        self.set_subscription(response.json_dict())
+        self._subscribe_at_pubnub()
+        self.trigger(Events.subscribeSuccess, response)
+
+        return response
+
+    except Exception as e:
+        self.reset()
+        self.trigger(Events.subscribeError, e)
+        raise</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.subscription"><code class="name flex">
+<span>def <span class="ident">subscription</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subscription(self):
+    return self._subscription</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription" href="index.html">ringcentral.deprecated_pubnub_subscription</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.stripped" href="#ringcentral.deprecated_pubnub_subscription.subscription.stripped">stripped</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription">Subscription</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.add_events" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.add_events">add_events</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.alive" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.alive">alive</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.destroy" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.destroy">destroy</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.pubnub" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.pubnub">pubnub</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.register" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.register">register</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.remove" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.remove">remove</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.renew" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.renew">renew</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.reset" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.reset">reset</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.set_events" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.set_events">set_events</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.set_subscription" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.set_subscription">set_subscription</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.subscribe" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.subscribe">subscribe</a></code></li>
+<li><code><a title="ringcentral.deprecated_pubnub_subscription.subscription.Subscription.subscription" href="#ringcentral.deprecated_pubnub_subscription.subscription.Subscription.subscription">subscription</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>ringcentral.platform.platform API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ringcentral.platform.platform</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import sys
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
+from observable import Observable
+from functools import reduce
+from .auth import Auth
+from .events import Events
+from ..core import base64encode
+import warnings
+
+ACCOUNT_ID = &#39;~&#39;
+ACCOUNT_PREFIX = &#39;/account/&#39;
+URL_PREFIX = &#39;/restapi&#39;
+TOKEN_ENDPOINT = &#39;/restapi/oauth/token&#39;
+REVOKE_ENDPOINT = &#39;/restapi/oauth/revoke&#39;
+AUTHORIZE_ENDPOINT = &#39;/restapi/oauth/authorize&#39;
+API_VERSION = &#39;v1.0&#39;
+ACCESS_TOKEN_TTL = 3600  # 60 minutes
+REFRESH_TOKEN_TTL = 604800  # 1 week
+KNOWN_PREFIXES = [
+    URL_PREFIX,
+    &#39;/rcvideo&#39;,
+    &#39;/video&#39;,
+    &#39;/webinar&#39;,
+    &#39;/analytics&#39;,
+    &#39;/ai&#39;,
+    &#39;/team-messaging&#39;,
+    &#39;/scim&#39;,
+    &#39;/cx/&#39;
+]
+
+
+class Platform(Observable):
+    def __init__(self, client, key=&#39;&#39;, secret=&#39;&#39;, server=&#39;&#39;, name=&#39;&#39;, version=&#39;&#39;, redirect_uri=&#39;&#39;,
+                 known_prefixes=None):
+
+        Observable.__init__(self)
+        if(server == None):
+            raise Exception(&#34;SDK init error: RINGCENTRAL_SERVER_URL value not found.&#34;)
+        if(key == None):
+            raise Exception(&#34;SDK init error: RINGCENTRAL_CLIENT_ID value not found.&#34;)
+        if(secret == None):
+            raise Exception(&#34;SDK init error: RINGCENTRAL_CLIENT_SECRET value not found.&#34;)
+
+        self._server = server
+        self._key = key
+        self._name = name if name else &#39;Unnamed&#39;
+        self._version = version if version else &#39;0.0.0&#39;
+        self._redirect_uri = redirect_uri
+        self._secret = secret
+        self._client = client
+        self._auth = Auth()
+        self._account = ACCOUNT_ID
+        self._known_prefixes = known_prefixes if known_prefixes else KNOWN_PREFIXES
+        self._userAgent = ((self._name + (&#39;/&#39; + self._version if self._version else &#39;&#39;) + &#39; &#39;) if self._name else &#39;&#39;) + \
+                          sys.platform + &#39;/VERSION&#39; + &#39; &#39; + \
+                          &#39;PYTHON/VERSION &#39; + \
+                          &#39;RCPYTHONSDK/VERSION&#39;
+
+    def auth(self):
+        return self._auth
+
+    def create_url(self, url, add_server=False, add_method=None, add_token=False):
+        &#34;&#34;&#34;
+            Creates a complete URL based on the provided URL and additional parameters.
+
+            Args:
+                url (str): The base URL.
+                add_server (bool): Whether to prepend the server URL if the provided URL doesn&#39;t contain &#39;http://&#39; or &#39;https://&#39;.
+                add_method (str, optional): The HTTP method to append as a query parameter.
+                add_token (bool): Whether to append the access token as a query parameter.
+
+            Returns:
+                str: The complete URL.
+
+            Note:
+                - If `add_server` is True and the provided URL doesn&#39;t start with &#39;http://&#39; or &#39;https://&#39;, the server URL will be prepended.
+                - If the provided URL doesn&#39;t contain known prefixes or &#39;http://&#39; or &#39;https://&#39;, the URL_PREFIX and API_VERSION will be appended.
+                - If the provided URL contains ACCOUNT_PREFIX followed by ACCOUNT_ID, it will be replaced with ACCOUNT_PREFIX and the account ID associated with the SDK instance.
+                - If `add_method` is provided, it will be appended as a query parameter &#39;_method&#39;.
+                - If `add_token` is True, the access token associated with the SDK instance will be appended as a query parameter &#39;access_token&#39;.
+        &#34;&#34;&#34;
+        built_url = &#39;&#39;
+        has_http = url.startswith(&#39;http://&#39;) or url.startswith(&#39;https://&#39;)
+
+        if add_server and not has_http:
+            built_url += self._server
+
+        if not reduce(lambda res, prefix: res if res else url.find(prefix) == 0, self._known_prefixes, False) and not has_http:
+            built_url += URL_PREFIX + &#39;/&#39; + API_VERSION
+
+        if url.find(ACCOUNT_PREFIX) &gt;= 0:
+            built_url = built_url.replace(ACCOUNT_PREFIX + ACCOUNT_ID, ACCOUNT_PREFIX + self._account)
+
+        built_url += url
+
+        if add_method:
+            built_url += (&#39;&amp;&#39; if built_url.find(&#39;?&#39;) &gt;= 0 else &#39;?&#39;) + &#39;_method=&#39; + add_method
+
+        if add_token:
+            built_url += (&#39;&amp;&#39; if built_url.find(&#39;?&#39;) &gt;= 0 else &#39;?&#39;) + &#39;access_token=&#39; + self._auth.access_token()
+
+        return built_url
+
+    def logged_in(self):
+        &#34;&#34;&#34;
+        Checks if the user is currently logged in.
+
+        Returns:
+            bool: True if the user is logged in, False otherwise.
+
+        Note:
+            - This method checks if the access token is valid.
+            - If the access token is not valid, it attempts to refresh it by calling the `refresh` method.
+            - If any exceptions occur during the process, it returns False.
+        &#34;&#34;&#34;
+        try:
+            return self._auth.access_token_valid() or self.refresh()
+        except:
+            return False
+
+    def login_url(self, redirect_uri, state=&#39;&#39;, challenge=&#39;&#39;, challenge_method=&#39;S256&#39;):
+        &#34;&#34;&#34;
+        Generates the URL for initiating the login process.
+
+        Args:
+            redirect_uri (str): The URI to which the user will be redirected after authentication.
+            state (str, optional): A value to maintain state between the request and the callback. Default is &#39;&#39;.
+            challenge (str, optional): The code challenge for PKCE (Proof Key for Code Exchange). Default is &#39;&#39;.
+            challenge_method (str, optional): The code challenge method for PKCE. Default is &#39;S256&#39;.
+
+        Returns:
+            str: The login URL.
+        &#34;&#34;&#34;
+        built_url = self.create_url( AUTHORIZE_ENDPOINT, add_server=True )
+        built_url += &#39;?response_type=code&amp;client_id=&#39; + self._key + &#39;&amp;redirect_uri=&#39; + urllib.parse.quote(redirect_uri)
+        if state:
+            built_url += &#39;&amp;state=&#39; + urllib.parse.quote(state)
+        if challenge:
+            built_url += &#39;&amp;code_challenge=&#39; + urllib.parse.quote(challenge) + &#39;&amp;code_challenge_method=&#39; + challenge_method
+        return built_url
+
+    def login(self, username=&#39;&#39;, extension=&#39;&#39;, password=&#39;&#39;, code=&#39;&#39;, redirect_uri=&#39;&#39;, jwt=&#39;&#39;, verifier=&#39;&#39;):
+        &#34;&#34;&#34;
+            Logs in the user using various authentication methods.
+
+            Args:
+                username (str, optional): The username for authentication. Required if password is provided. Default is &#39;&#39;.
+                extension (str, optional): The extension associated with the username. Default is &#39;&#39;.
+                password (str, optional): The password for authentication. Required if username is provided. Default is &#39;&#39;.
+                code (str, optional): The authorization code for authentication. Default is &#39;&#39;.
+                redirect_uri (str, optional): The URI to redirect to after authentication. Default is &#39;&#39;.
+                jwt (str, optional): The JWT (JSON Web Token) for authentication. Default is &#39;&#39;.
+                verifier (str, optional): The code verifier for PKCE (Proof Key for Code Exchange). Default is &#39;&#39;.
+
+            Returns:
+                Response: The response object containing authentication data if successful.
+
+            Raises:
+                Exception: If the login attempt fails or invalid parameters are provided.
+
+            Note:
+                - This method supports multiple authentication flows including password-based, authorization code, and JWT.
+                - It checks for the presence of required parameters and raises an exception if necessary.
+                - Deprecation warning is issued for username-password login; recommend using JWT or OAuth instead.
+                - Constructs the appropriate request body based on the provided parameters.
+                - Uses `create_url` to build the token endpoint URL, adding the server URL if required.
+                - Sends the authentication request using `_request_token`.
+                - Triggers the loginSuccess or loginError event based on the outcome of the login attempt.
+        &#34;&#34;&#34;
+        try:
+            if not code and not username and not password and not jwt:
+                raise Exception(&#39;Either code, or username with password, or jwt has to be provided&#39;)
+            if username and password:
+                warnings.warn(&#34;username-password login will soon be deprecated. Please use jwt or OAuth instead.&#34;)
+            if not code and not jwt:
+                body = {
+                    &#39;grant_type&#39;: &#39;password&#39;,
+                    &#39;username&#39;: username,
+                    &#39;password&#39;: password,
+                    &#39;access_token_ttl&#39;: ACCESS_TOKEN_TTL,
+                    &#39;refresh_token_ttl&#39;: REFRESH_TOKEN_TTL
+                }
+                if extension:
+                    body[&#39;extension&#39;] = extension
+            elif jwt:
+                body = {
+                    &#39;grant_type&#39;: &#39;urn:ietf:params:oauth:grant-type:jwt-bearer&#39;,
+                    &#39;assertion&#39;: jwt
+                }
+            else:
+                body = {
+                    &#39;grant_type&#39;: &#39;authorization_code&#39;,
+                    &#39;redirect_uri&#39;: redirect_uri if redirect_uri else self._redirect_uri,
+                    &#39;code&#39;: code
+                }
+                if verifier:
+                    body[&#39;code_verifier&#39;] = verifier
+
+            built_url = self.create_url( TOKEN_ENDPOINT, add_server=True )
+            response = self._request_token( built_url, body=body)
+            self._auth.set_data(response.json_dict())
+            self.trigger(Events.loginSuccess, response)
+            return response
+        except Exception as e:
+            self.trigger(Events.loginError, e)
+            raise e
+
+    def refresh(self):
+        &#34;&#34;&#34;
+            Refreshes the authentication tokens.
+
+            Returns:
+                Response: The response object containing refreshed authentication data if successful.
+
+            Raises:
+                Exception: If the refresh token has expired or if any error occurs during the refresh process.
+
+            Note:
+                - This method checks if the refresh token is still valid using `_auth.refresh_token_valid()`.
+                - Constructs the request body with the grant type as &#39;refresh_token&#39; and includes the refresh token.
+                - Sends the token refresh request using `_request_token` at this &#39;/restapi/oauth/token end point.
+                - Triggers the refreshSuccess or refreshError event based on the outcome of the refresh attempt.
+        &#34;&#34;&#34;
+        try:
+            if not self._auth.refresh_token_valid():
+                raise Exception(&#39;Refresh token has expired&#39;)
+            response = self._request_token(TOKEN_ENDPOINT, body={
+                &#39;grant_type&#39;: &#39;refresh_token&#39;,
+                &#39;refresh_token&#39;: self._auth.refresh_token(),
+                &#39;access_token_ttl&#39;: ACCESS_TOKEN_TTL,
+                &#39;refresh_token_ttl&#39;: REFRESH_TOKEN_TTL
+            })
+            self._auth.set_data(response.json_dict())
+            self.trigger(Events.refreshSuccess, response)
+            return response
+        except Exception as e:
+            self.trigger(Events.refreshError, e)
+            raise e
+
+    def logout(self):
+        &#34;&#34;&#34;
+            Logs out the user by revoking the access token.
+
+            Returns:
+                Response: The response object containing logout confirmation if successful.
+
+            Raises:
+                Exception: If any error occurs during the logout process.
+
+            Note:
+                - Constructs the request body with the access token to be revoked.
+                - Sends the token revoke request using `_request_token` at this /restapi/oauth/revoke end point.
+                - Resets the authentication data using `_auth.reset()` upon successful logout.
+                - Triggers the logoutSuccess or logoutError event based on the outcome of the logout attempt.
+        &#34;&#34;&#34;
+        try:
+            response = self._request_token(REVOKE_ENDPOINT, body={
+                &#39;token&#39;: self._auth.access_token()
+            })
+            self._auth.reset()
+            self.trigger(Events.logoutSuccess, response)
+            return response
+        except Exception as e:
+            self.trigger(Events.logoutError, e)
+            raise e
+
+    def inflate_request(self, request, skip_auth_check=False):
+        &#34;&#34;&#34;
+            Inflates the provided request object with necessary headers and URL modifications.
+
+            Args:
+                request (Request): The request object to be inflated.
+                skip_auth_check (bool, optional): Whether to skip the authentication check and header addition. Default is False.
+
+            Note:
+                - If `skip_auth_check` is False (default), it ensures authentication by calling `_ensure_authentication` and adds the &#39;Authorization&#39; header.
+                - Sets the &#39;User-Agent&#39; and &#39;X-User-Agent&#39; headers to the value specified in `_userAgent`.
+                - Modifies the request URL using `create_url`, adding the server URL if necessary.
+        &#34;&#34;&#34;
+        if not skip_auth_check:
+            self._ensure_authentication()
+            request.headers[&#39;Authorization&#39;] = self._auth_header()
+
+        request.headers[&#39;User-Agent&#39;] = self._userAgent
+        request.headers[&#39;X-User-Agent&#39;] = self._userAgent
+        request.url = self.create_url(request.url, add_server=True)
+
+        return request
+
+    def send_request(self, request, skip_auth_check=False):
+        return self._client.send(self.inflate_request(request, skip_auth_check=skip_auth_check))
+
+    def get(self, url, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;GET&#39;, url, query_params=query_params, headers=headers)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def post(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;POST&#39;, url, query_params=query_params, headers=headers, body=body)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def put(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;PUT&#39;, url, query_params=query_params, headers=headers, body=body)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def patch(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;PATCH&#39;, url, query_params=query_params, headers=headers, body=body)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def delete(self, url, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;DELETE&#39;, url, query_params=query_params, headers=headers)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def _request_token(self, path=&#39;&#39;, body=None):
+        headers = {
+            &#39;Authorization&#39;: &#39;Basic &#39; + self._api_key(),
+            &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;
+        }
+        request = self._client.create_request(&#39;POST&#39;, path, body=body, headers=headers)
+        return self.send_request(request, skip_auth_check=True)
+
+    def _api_key(self):
+        return base64encode(self._key + &#39;:&#39; + self._secret)
+
+    def _auth_header(self):
+        return self._auth.token_type() + &#39; &#39; + self._auth.access_token()
+
+    def _ensure_authentication(self):
+        if not self._auth.access_token_valid():
+            self.refresh()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ringcentral.platform.platform.Platform"><code class="flex name class">
+<span>class <span class="ident">Platform</span></span>
+<span>(</span><span>client, key='', secret='', server='', name='', version='', redirect_uri='', known_prefixes=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Event system for python</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Platform(Observable):
+    def __init__(self, client, key=&#39;&#39;, secret=&#39;&#39;, server=&#39;&#39;, name=&#39;&#39;, version=&#39;&#39;, redirect_uri=&#39;&#39;,
+                 known_prefixes=None):
+
+        Observable.__init__(self)
+        if(server == None):
+            raise Exception(&#34;SDK init error: RINGCENTRAL_SERVER_URL value not found.&#34;)
+        if(key == None):
+            raise Exception(&#34;SDK init error: RINGCENTRAL_CLIENT_ID value not found.&#34;)
+        if(secret == None):
+            raise Exception(&#34;SDK init error: RINGCENTRAL_CLIENT_SECRET value not found.&#34;)
+
+        self._server = server
+        self._key = key
+        self._name = name if name else &#39;Unnamed&#39;
+        self._version = version if version else &#39;0.0.0&#39;
+        self._redirect_uri = redirect_uri
+        self._secret = secret
+        self._client = client
+        self._auth = Auth()
+        self._account = ACCOUNT_ID
+        self._known_prefixes = known_prefixes if known_prefixes else KNOWN_PREFIXES
+        self._userAgent = ((self._name + (&#39;/&#39; + self._version if self._version else &#39;&#39;) + &#39; &#39;) if self._name else &#39;&#39;) + \
+                          sys.platform + &#39;/VERSION&#39; + &#39; &#39; + \
+                          &#39;PYTHON/VERSION &#39; + \
+                          &#39;RCPYTHONSDK/VERSION&#39;
+
+    def auth(self):
+        return self._auth
+
+    def create_url(self, url, add_server=False, add_method=None, add_token=False):
+        &#34;&#34;&#34;
+            Creates a complete URL based on the provided URL and additional parameters.
+
+            Args:
+                url (str): The base URL.
+                add_server (bool): Whether to prepend the server URL if the provided URL doesn&#39;t contain &#39;http://&#39; or &#39;https://&#39;.
+                add_method (str, optional): The HTTP method to append as a query parameter.
+                add_token (bool): Whether to append the access token as a query parameter.
+
+            Returns:
+                str: The complete URL.
+
+            Note:
+                - If `add_server` is True and the provided URL doesn&#39;t start with &#39;http://&#39; or &#39;https://&#39;, the server URL will be prepended.
+                - If the provided URL doesn&#39;t contain known prefixes or &#39;http://&#39; or &#39;https://&#39;, the URL_PREFIX and API_VERSION will be appended.
+                - If the provided URL contains ACCOUNT_PREFIX followed by ACCOUNT_ID, it will be replaced with ACCOUNT_PREFIX and the account ID associated with the SDK instance.
+                - If `add_method` is provided, it will be appended as a query parameter &#39;_method&#39;.
+                - If `add_token` is True, the access token associated with the SDK instance will be appended as a query parameter &#39;access_token&#39;.
+        &#34;&#34;&#34;
+        built_url = &#39;&#39;
+        has_http = url.startswith(&#39;http://&#39;) or url.startswith(&#39;https://&#39;)
+
+        if add_server and not has_http:
+            built_url += self._server
+
+        if not reduce(lambda res, prefix: res if res else url.find(prefix) == 0, self._known_prefixes, False) and not has_http:
+            built_url += URL_PREFIX + &#39;/&#39; + API_VERSION
+
+        if url.find(ACCOUNT_PREFIX) &gt;= 0:
+            built_url = built_url.replace(ACCOUNT_PREFIX + ACCOUNT_ID, ACCOUNT_PREFIX + self._account)
+
+        built_url += url
+
+        if add_method:
+            built_url += (&#39;&amp;&#39; if built_url.find(&#39;?&#39;) &gt;= 0 else &#39;?&#39;) + &#39;_method=&#39; + add_method
+
+        if add_token:
+            built_url += (&#39;&amp;&#39; if built_url.find(&#39;?&#39;) &gt;= 0 else &#39;?&#39;) + &#39;access_token=&#39; + self._auth.access_token()
+
+        return built_url
+
+    def logged_in(self):
+        &#34;&#34;&#34;
+        Checks if the user is currently logged in.
+
+        Returns:
+            bool: True if the user is logged in, False otherwise.
+
+        Note:
+            - This method checks if the access token is valid.
+            - If the access token is not valid, it attempts to refresh it by calling the `refresh` method.
+            - If any exceptions occur during the process, it returns False.
+        &#34;&#34;&#34;
+        try:
+            return self._auth.access_token_valid() or self.refresh()
+        except:
+            return False
+
+    def login_url(self, redirect_uri, state=&#39;&#39;, challenge=&#39;&#39;, challenge_method=&#39;S256&#39;):
+        &#34;&#34;&#34;
+        Generates the URL for initiating the login process.
+
+        Args:
+            redirect_uri (str): The URI to which the user will be redirected after authentication.
+            state (str, optional): A value to maintain state between the request and the callback. Default is &#39;&#39;.
+            challenge (str, optional): The code challenge for PKCE (Proof Key for Code Exchange). Default is &#39;&#39;.
+            challenge_method (str, optional): The code challenge method for PKCE. Default is &#39;S256&#39;.
+
+        Returns:
+            str: The login URL.
+        &#34;&#34;&#34;
+        built_url = self.create_url( AUTHORIZE_ENDPOINT, add_server=True )
+        built_url += &#39;?response_type=code&amp;client_id=&#39; + self._key + &#39;&amp;redirect_uri=&#39; + urllib.parse.quote(redirect_uri)
+        if state:
+            built_url += &#39;&amp;state=&#39; + urllib.parse.quote(state)
+        if challenge:
+            built_url += &#39;&amp;code_challenge=&#39; + urllib.parse.quote(challenge) + &#39;&amp;code_challenge_method=&#39; + challenge_method
+        return built_url
+
+    def login(self, username=&#39;&#39;, extension=&#39;&#39;, password=&#39;&#39;, code=&#39;&#39;, redirect_uri=&#39;&#39;, jwt=&#39;&#39;, verifier=&#39;&#39;):
+        &#34;&#34;&#34;
+            Logs in the user using various authentication methods.
+
+            Args:
+                username (str, optional): The username for authentication. Required if password is provided. Default is &#39;&#39;.
+                extension (str, optional): The extension associated with the username. Default is &#39;&#39;.
+                password (str, optional): The password for authentication. Required if username is provided. Default is &#39;&#39;.
+                code (str, optional): The authorization code for authentication. Default is &#39;&#39;.
+                redirect_uri (str, optional): The URI to redirect to after authentication. Default is &#39;&#39;.
+                jwt (str, optional): The JWT (JSON Web Token) for authentication. Default is &#39;&#39;.
+                verifier (str, optional): The code verifier for PKCE (Proof Key for Code Exchange). Default is &#39;&#39;.
+
+            Returns:
+                Response: The response object containing authentication data if successful.
+
+            Raises:
+                Exception: If the login attempt fails or invalid parameters are provided.
+
+            Note:
+                - This method supports multiple authentication flows including password-based, authorization code, and JWT.
+                - It checks for the presence of required parameters and raises an exception if necessary.
+                - Deprecation warning is issued for username-password login; recommend using JWT or OAuth instead.
+                - Constructs the appropriate request body based on the provided parameters.
+                - Uses `create_url` to build the token endpoint URL, adding the server URL if required.
+                - Sends the authentication request using `_request_token`.
+                - Triggers the loginSuccess or loginError event based on the outcome of the login attempt.
+        &#34;&#34;&#34;
+        try:
+            if not code and not username and not password and not jwt:
+                raise Exception(&#39;Either code, or username with password, or jwt has to be provided&#39;)
+            if username and password:
+                warnings.warn(&#34;username-password login will soon be deprecated. Please use jwt or OAuth instead.&#34;)
+            if not code and not jwt:
+                body = {
+                    &#39;grant_type&#39;: &#39;password&#39;,
+                    &#39;username&#39;: username,
+                    &#39;password&#39;: password,
+                    &#39;access_token_ttl&#39;: ACCESS_TOKEN_TTL,
+                    &#39;refresh_token_ttl&#39;: REFRESH_TOKEN_TTL
+                }
+                if extension:
+                    body[&#39;extension&#39;] = extension
+            elif jwt:
+                body = {
+                    &#39;grant_type&#39;: &#39;urn:ietf:params:oauth:grant-type:jwt-bearer&#39;,
+                    &#39;assertion&#39;: jwt
+                }
+            else:
+                body = {
+                    &#39;grant_type&#39;: &#39;authorization_code&#39;,
+                    &#39;redirect_uri&#39;: redirect_uri if redirect_uri else self._redirect_uri,
+                    &#39;code&#39;: code
+                }
+                if verifier:
+                    body[&#39;code_verifier&#39;] = verifier
+
+            built_url = self.create_url( TOKEN_ENDPOINT, add_server=True )
+            response = self._request_token( built_url, body=body)
+            self._auth.set_data(response.json_dict())
+            self.trigger(Events.loginSuccess, response)
+            return response
+        except Exception as e:
+            self.trigger(Events.loginError, e)
+            raise e
+
+    def refresh(self):
+        &#34;&#34;&#34;
+            Refreshes the authentication tokens.
+
+            Returns:
+                Response: The response object containing refreshed authentication data if successful.
+
+            Raises:
+                Exception: If the refresh token has expired or if any error occurs during the refresh process.
+
+            Note:
+                - This method checks if the refresh token is still valid using `_auth.refresh_token_valid()`.
+                - Constructs the request body with the grant type as &#39;refresh_token&#39; and includes the refresh token.
+                - Sends the token refresh request using `_request_token` at this &#39;/restapi/oauth/token end point.
+                - Triggers the refreshSuccess or refreshError event based on the outcome of the refresh attempt.
+        &#34;&#34;&#34;
+        try:
+            if not self._auth.refresh_token_valid():
+                raise Exception(&#39;Refresh token has expired&#39;)
+            response = self._request_token(TOKEN_ENDPOINT, body={
+                &#39;grant_type&#39;: &#39;refresh_token&#39;,
+                &#39;refresh_token&#39;: self._auth.refresh_token(),
+                &#39;access_token_ttl&#39;: ACCESS_TOKEN_TTL,
+                &#39;refresh_token_ttl&#39;: REFRESH_TOKEN_TTL
+            })
+            self._auth.set_data(response.json_dict())
+            self.trigger(Events.refreshSuccess, response)
+            return response
+        except Exception as e:
+            self.trigger(Events.refreshError, e)
+            raise e
+
+    def logout(self):
+        &#34;&#34;&#34;
+            Logs out the user by revoking the access token.
+
+            Returns:
+                Response: The response object containing logout confirmation if successful.
+
+            Raises:
+                Exception: If any error occurs during the logout process.
+
+            Note:
+                - Constructs the request body with the access token to be revoked.
+                - Sends the token revoke request using `_request_token` at this /restapi/oauth/revoke end point.
+                - Resets the authentication data using `_auth.reset()` upon successful logout.
+                - Triggers the logoutSuccess or logoutError event based on the outcome of the logout attempt.
+        &#34;&#34;&#34;
+        try:
+            response = self._request_token(REVOKE_ENDPOINT, body={
+                &#39;token&#39;: self._auth.access_token()
+            })
+            self._auth.reset()
+            self.trigger(Events.logoutSuccess, response)
+            return response
+        except Exception as e:
+            self.trigger(Events.logoutError, e)
+            raise e
+
+    def inflate_request(self, request, skip_auth_check=False):
+        &#34;&#34;&#34;
+            Inflates the provided request object with necessary headers and URL modifications.
+
+            Args:
+                request (Request): The request object to be inflated.
+                skip_auth_check (bool, optional): Whether to skip the authentication check and header addition. Default is False.
+
+            Note:
+                - If `skip_auth_check` is False (default), it ensures authentication by calling `_ensure_authentication` and adds the &#39;Authorization&#39; header.
+                - Sets the &#39;User-Agent&#39; and &#39;X-User-Agent&#39; headers to the value specified in `_userAgent`.
+                - Modifies the request URL using `create_url`, adding the server URL if necessary.
+        &#34;&#34;&#34;
+        if not skip_auth_check:
+            self._ensure_authentication()
+            request.headers[&#39;Authorization&#39;] = self._auth_header()
+
+        request.headers[&#39;User-Agent&#39;] = self._userAgent
+        request.headers[&#39;X-User-Agent&#39;] = self._userAgent
+        request.url = self.create_url(request.url, add_server=True)
+
+        return request
+
+    def send_request(self, request, skip_auth_check=False):
+        return self._client.send(self.inflate_request(request, skip_auth_check=skip_auth_check))
+
+    def get(self, url, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;GET&#39;, url, query_params=query_params, headers=headers)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def post(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;POST&#39;, url, query_params=query_params, headers=headers, body=body)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def put(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;PUT&#39;, url, query_params=query_params, headers=headers, body=body)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def patch(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;PATCH&#39;, url, query_params=query_params, headers=headers, body=body)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def delete(self, url, query_params=None, headers=None, skip_auth_check=False):
+        request = self._client.create_request(&#39;DELETE&#39;, url, query_params=query_params, headers=headers)
+        return self.send_request(request, skip_auth_check=skip_auth_check)
+
+    def _request_token(self, path=&#39;&#39;, body=None):
+        headers = {
+            &#39;Authorization&#39;: &#39;Basic &#39; + self._api_key(),
+            &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;
+        }
+        request = self._client.create_request(&#39;POST&#39;, path, body=body, headers=headers)
+        return self.send_request(request, skip_auth_check=True)
+
+    def _api_key(self):
+        return base64encode(self._key + &#39;:&#39; + self._secret)
+
+    def _auth_header(self):
+        return self._auth.token_type() + &#39; &#39; + self._auth.access_token()
+
+    def _ensure_authentication(self):
+        if not self._auth.access_token_valid():
+            self.refresh()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>observable.core.Observable</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="ringcentral.platform.platform.Platform.auth"><code class="name flex">
+<span>def <span class="ident">auth</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def auth(self):
+    return self._auth</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.create_url"><code class="name flex">
+<span>def <span class="ident">create_url</span></span>(<span>self, url, add_server=False, add_method=None, add_token=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a complete URL based on the provided URL and additional parameters.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>url</code></strong> :&ensp;<code>str</code></dt>
+<dd>The base URL.</dd>
+<dt><strong><code>add_server</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to prepend the server URL if the provided URL doesn't contain 'http://' or 'https://'.</dd>
+<dt><strong><code>add_method</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The HTTP method to append as a query parameter.</dd>
+<dt><strong><code>add_token</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether to append the access token as a query parameter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The complete URL.</dd>
+</dl>
+<h2 id="note">Note</h2>
+<ul>
+<li>If <code>add_server</code> is True and the provided URL doesn't start with 'http://' or 'https://', the server URL will be prepended.</li>
+<li>If the provided URL doesn't contain known prefixes or 'http://' or 'https://', the URL_PREFIX and API_VERSION will be appended.</li>
+<li>If the provided URL contains ACCOUNT_PREFIX followed by ACCOUNT_ID, it will be replaced with ACCOUNT_PREFIX and the account ID associated with the SDK instance.</li>
+<li>If <code>add_method</code> is provided, it will be appended as a query parameter '_method'.</li>
+<li>If <code>add_token</code> is True, the access token associated with the SDK instance will be appended as a query parameter 'access_token'.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_url(self, url, add_server=False, add_method=None, add_token=False):
+    &#34;&#34;&#34;
+        Creates a complete URL based on the provided URL and additional parameters.
+
+        Args:
+            url (str): The base URL.
+            add_server (bool): Whether to prepend the server URL if the provided URL doesn&#39;t contain &#39;http://&#39; or &#39;https://&#39;.
+            add_method (str, optional): The HTTP method to append as a query parameter.
+            add_token (bool): Whether to append the access token as a query parameter.
+
+        Returns:
+            str: The complete URL.
+
+        Note:
+            - If `add_server` is True and the provided URL doesn&#39;t start with &#39;http://&#39; or &#39;https://&#39;, the server URL will be prepended.
+            - If the provided URL doesn&#39;t contain known prefixes or &#39;http://&#39; or &#39;https://&#39;, the URL_PREFIX and API_VERSION will be appended.
+            - If the provided URL contains ACCOUNT_PREFIX followed by ACCOUNT_ID, it will be replaced with ACCOUNT_PREFIX and the account ID associated with the SDK instance.
+            - If `add_method` is provided, it will be appended as a query parameter &#39;_method&#39;.
+            - If `add_token` is True, the access token associated with the SDK instance will be appended as a query parameter &#39;access_token&#39;.
+    &#34;&#34;&#34;
+    built_url = &#39;&#39;
+    has_http = url.startswith(&#39;http://&#39;) or url.startswith(&#39;https://&#39;)
+
+    if add_server and not has_http:
+        built_url += self._server
+
+    if not reduce(lambda res, prefix: res if res else url.find(prefix) == 0, self._known_prefixes, False) and not has_http:
+        built_url += URL_PREFIX + &#39;/&#39; + API_VERSION
+
+    if url.find(ACCOUNT_PREFIX) &gt;= 0:
+        built_url = built_url.replace(ACCOUNT_PREFIX + ACCOUNT_ID, ACCOUNT_PREFIX + self._account)
+
+    built_url += url
+
+    if add_method:
+        built_url += (&#39;&amp;&#39; if built_url.find(&#39;?&#39;) &gt;= 0 else &#39;?&#39;) + &#39;_method=&#39; + add_method
+
+    if add_token:
+        built_url += (&#39;&amp;&#39; if built_url.find(&#39;?&#39;) &gt;= 0 else &#39;?&#39;) + &#39;access_token=&#39; + self._auth.access_token()
+
+    return built_url</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.delete"><code class="name flex">
+<span>def <span class="ident">delete</span></span>(<span>self, url, query_params=None, headers=None, skip_auth_check=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete(self, url, query_params=None, headers=None, skip_auth_check=False):
+    request = self._client.create_request(&#39;DELETE&#39;, url, query_params=query_params, headers=headers)
+    return self.send_request(request, skip_auth_check=skip_auth_check)</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self, url, query_params=None, headers=None, skip_auth_check=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get(self, url, query_params=None, headers=None, skip_auth_check=False):
+    request = self._client.create_request(&#39;GET&#39;, url, query_params=query_params, headers=headers)
+    return self.send_request(request, skip_auth_check=skip_auth_check)</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.inflate_request"><code class="name flex">
+<span>def <span class="ident">inflate_request</span></span>(<span>self, request, skip_auth_check=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inflates the provided request object with necessary headers and URL modifications.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>request</code></strong> :&ensp;<code>Request</code></dt>
+<dd>The request object to be inflated.</dd>
+<dt><strong><code>skip_auth_check</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Whether to skip the authentication check and header addition. Default is False.</dd>
+</dl>
+<h2 id="note">Note</h2>
+<ul>
+<li>If <code>skip_auth_check</code> is False (default), it ensures authentication by calling <code>_ensure_authentication</code> and adds the 'Authorization' header.</li>
+<li>Sets the 'User-Agent' and 'X-User-Agent' headers to the value specified in <code>_userAgent</code>.</li>
+<li>Modifies the request URL using <code>create_url</code>, adding the server URL if necessary.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def inflate_request(self, request, skip_auth_check=False):
+    &#34;&#34;&#34;
+        Inflates the provided request object with necessary headers and URL modifications.
+
+        Args:
+            request (Request): The request object to be inflated.
+            skip_auth_check (bool, optional): Whether to skip the authentication check and header addition. Default is False.
+
+        Note:
+            - If `skip_auth_check` is False (default), it ensures authentication by calling `_ensure_authentication` and adds the &#39;Authorization&#39; header.
+            - Sets the &#39;User-Agent&#39; and &#39;X-User-Agent&#39; headers to the value specified in `_userAgent`.
+            - Modifies the request URL using `create_url`, adding the server URL if necessary.
+    &#34;&#34;&#34;
+    if not skip_auth_check:
+        self._ensure_authentication()
+        request.headers[&#39;Authorization&#39;] = self._auth_header()
+
+    request.headers[&#39;User-Agent&#39;] = self._userAgent
+    request.headers[&#39;X-User-Agent&#39;] = self._userAgent
+    request.url = self.create_url(request.url, add_server=True)
+
+    return request</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.logged_in"><code class="name flex">
+<span>def <span class="ident">logged_in</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if the user is currently logged in.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True if the user is logged in, False otherwise.</dd>
+</dl>
+<h2 id="note">Note</h2>
+<ul>
+<li>This method checks if the access token is valid.</li>
+<li>If the access token is not valid, it attempts to refresh it by calling the <code>refresh</code> method.</li>
+<li>If any exceptions occur during the process, it returns False.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def logged_in(self):
+    &#34;&#34;&#34;
+    Checks if the user is currently logged in.
+
+    Returns:
+        bool: True if the user is logged in, False otherwise.
+
+    Note:
+        - This method checks if the access token is valid.
+        - If the access token is not valid, it attempts to refresh it by calling the `refresh` method.
+        - If any exceptions occur during the process, it returns False.
+    &#34;&#34;&#34;
+    try:
+        return self._auth.access_token_valid() or self.refresh()
+    except:
+        return False</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.login"><code class="name flex">
+<span>def <span class="ident">login</span></span>(<span>self, username='', extension='', password='', code='', redirect_uri='', jwt='', verifier='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Logs in the user using various authentication methods.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>username</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The username for authentication. Required if password is provided. Default is ''.</dd>
+<dt><strong><code>extension</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The extension associated with the username. Default is ''.</dd>
+<dt><strong><code>password</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The password for authentication. Required if username is provided. Default is ''.</dd>
+<dt><strong><code>code</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The authorization code for authentication. Default is ''.</dd>
+<dt><strong><code>redirect_uri</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The URI to redirect to after authentication. Default is ''.</dd>
+<dt><strong><code>jwt</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The JWT (JSON Web Token) for authentication. Default is ''.</dd>
+<dt><strong><code>verifier</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The code verifier for PKCE (Proof Key for Code Exchange). Default is ''.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Response</code></dt>
+<dd>The response object containing authentication data if successful.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>Exception</code></dt>
+<dd>If the login attempt fails or invalid parameters are provided.</dd>
+</dl>
+<h2 id="note">Note</h2>
+<ul>
+<li>This method supports multiple authentication flows including password-based, authorization code, and JWT.</li>
+<li>It checks for the presence of required parameters and raises an exception if necessary.</li>
+<li>Deprecation warning is issued for username-password login; recommend using JWT or OAuth instead.</li>
+<li>Constructs the appropriate request body based on the provided parameters.</li>
+<li>Uses <code>create_url</code> to build the token endpoint URL, adding the server URL if required.</li>
+<li>Sends the authentication request using <code>_request_token</code>.</li>
+<li>Triggers the loginSuccess or loginError event based on the outcome of the login attempt.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def login(self, username=&#39;&#39;, extension=&#39;&#39;, password=&#39;&#39;, code=&#39;&#39;, redirect_uri=&#39;&#39;, jwt=&#39;&#39;, verifier=&#39;&#39;):
+    &#34;&#34;&#34;
+        Logs in the user using various authentication methods.
+
+        Args:
+            username (str, optional): The username for authentication. Required if password is provided. Default is &#39;&#39;.
+            extension (str, optional): The extension associated with the username. Default is &#39;&#39;.
+            password (str, optional): The password for authentication. Required if username is provided. Default is &#39;&#39;.
+            code (str, optional): The authorization code for authentication. Default is &#39;&#39;.
+            redirect_uri (str, optional): The URI to redirect to after authentication. Default is &#39;&#39;.
+            jwt (str, optional): The JWT (JSON Web Token) for authentication. Default is &#39;&#39;.
+            verifier (str, optional): The code verifier for PKCE (Proof Key for Code Exchange). Default is &#39;&#39;.
+
+        Returns:
+            Response: The response object containing authentication data if successful.
+
+        Raises:
+            Exception: If the login attempt fails or invalid parameters are provided.
+
+        Note:
+            - This method supports multiple authentication flows including password-based, authorization code, and JWT.
+            - It checks for the presence of required parameters and raises an exception if necessary.
+            - Deprecation warning is issued for username-password login; recommend using JWT or OAuth instead.
+            - Constructs the appropriate request body based on the provided parameters.
+            - Uses `create_url` to build the token endpoint URL, adding the server URL if required.
+            - Sends the authentication request using `_request_token`.
+            - Triggers the loginSuccess or loginError event based on the outcome of the login attempt.
+    &#34;&#34;&#34;
+    try:
+        if not code and not username and not password and not jwt:
+            raise Exception(&#39;Either code, or username with password, or jwt has to be provided&#39;)
+        if username and password:
+            warnings.warn(&#34;username-password login will soon be deprecated. Please use jwt or OAuth instead.&#34;)
+        if not code and not jwt:
+            body = {
+                &#39;grant_type&#39;: &#39;password&#39;,
+                &#39;username&#39;: username,
+                &#39;password&#39;: password,
+                &#39;access_token_ttl&#39;: ACCESS_TOKEN_TTL,
+                &#39;refresh_token_ttl&#39;: REFRESH_TOKEN_TTL
+            }
+            if extension:
+                body[&#39;extension&#39;] = extension
+        elif jwt:
+            body = {
+                &#39;grant_type&#39;: &#39;urn:ietf:params:oauth:grant-type:jwt-bearer&#39;,
+                &#39;assertion&#39;: jwt
+            }
+        else:
+            body = {
+                &#39;grant_type&#39;: &#39;authorization_code&#39;,
+                &#39;redirect_uri&#39;: redirect_uri if redirect_uri else self._redirect_uri,
+                &#39;code&#39;: code
+            }
+            if verifier:
+                body[&#39;code_verifier&#39;] = verifier
+
+        built_url = self.create_url( TOKEN_ENDPOINT, add_server=True )
+        response = self._request_token( built_url, body=body)
+        self._auth.set_data(response.json_dict())
+        self.trigger(Events.loginSuccess, response)
+        return response
+    except Exception as e:
+        self.trigger(Events.loginError, e)
+        raise e</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.login_url"><code class="name flex">
+<span>def <span class="ident">login_url</span></span>(<span>self, redirect_uri, state='', challenge='', challenge_method='S256')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates the URL for initiating the login process.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>redirect_uri</code></strong> :&ensp;<code>str</code></dt>
+<dd>The URI to which the user will be redirected after authentication.</dd>
+<dt><strong><code>state</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>A value to maintain state between the request and the callback. Default is ''.</dd>
+<dt><strong><code>challenge</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The code challenge for PKCE (Proof Key for Code Exchange). Default is ''.</dd>
+<dt><strong><code>challenge_method</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The code challenge method for PKCE. Default is 'S256'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The login URL.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def login_url(self, redirect_uri, state=&#39;&#39;, challenge=&#39;&#39;, challenge_method=&#39;S256&#39;):
+    &#34;&#34;&#34;
+    Generates the URL for initiating the login process.
+
+    Args:
+        redirect_uri (str): The URI to which the user will be redirected after authentication.
+        state (str, optional): A value to maintain state between the request and the callback. Default is &#39;&#39;.
+        challenge (str, optional): The code challenge for PKCE (Proof Key for Code Exchange). Default is &#39;&#39;.
+        challenge_method (str, optional): The code challenge method for PKCE. Default is &#39;S256&#39;.
+
+    Returns:
+        str: The login URL.
+    &#34;&#34;&#34;
+    built_url = self.create_url( AUTHORIZE_ENDPOINT, add_server=True )
+    built_url += &#39;?response_type=code&amp;client_id=&#39; + self._key + &#39;&amp;redirect_uri=&#39; + urllib.parse.quote(redirect_uri)
+    if state:
+        built_url += &#39;&amp;state=&#39; + urllib.parse.quote(state)
+    if challenge:
+        built_url += &#39;&amp;code_challenge=&#39; + urllib.parse.quote(challenge) + &#39;&amp;code_challenge_method=&#39; + challenge_method
+    return built_url</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.logout"><code class="name flex">
+<span>def <span class="ident">logout</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Logs out the user by revoking the access token.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Response</code></dt>
+<dd>The response object containing logout confirmation if successful.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>Exception</code></dt>
+<dd>If any error occurs during the logout process.</dd>
+</dl>
+<h2 id="note">Note</h2>
+<ul>
+<li>Constructs the request body with the access token to be revoked.</li>
+<li>Sends the token revoke request using <code>_request_token</code> at this /restapi/oauth/revoke end point.</li>
+<li>Resets the authentication data using <code>_auth.reset()</code> upon successful logout.</li>
+<li>Triggers the logoutSuccess or logoutError event based on the outcome of the logout attempt.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def logout(self):
+    &#34;&#34;&#34;
+        Logs out the user by revoking the access token.
+
+        Returns:
+            Response: The response object containing logout confirmation if successful.
+
+        Raises:
+            Exception: If any error occurs during the logout process.
+
+        Note:
+            - Constructs the request body with the access token to be revoked.
+            - Sends the token revoke request using `_request_token` at this /restapi/oauth/revoke end point.
+            - Resets the authentication data using `_auth.reset()` upon successful logout.
+            - Triggers the logoutSuccess or logoutError event based on the outcome of the logout attempt.
+    &#34;&#34;&#34;
+    try:
+        response = self._request_token(REVOKE_ENDPOINT, body={
+            &#39;token&#39;: self._auth.access_token()
+        })
+        self._auth.reset()
+        self.trigger(Events.logoutSuccess, response)
+        return response
+    except Exception as e:
+        self.trigger(Events.logoutError, e)
+        raise e</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.patch"><code class="name flex">
+<span>def <span class="ident">patch</span></span>(<span>self, url, body=None, query_params=None, headers=None, skip_auth_check=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def patch(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+    request = self._client.create_request(&#39;PATCH&#39;, url, query_params=query_params, headers=headers, body=body)
+    return self.send_request(request, skip_auth_check=skip_auth_check)</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.post"><code class="name flex">
+<span>def <span class="ident">post</span></span>(<span>self, url, body=None, query_params=None, headers=None, skip_auth_check=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def post(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+    request = self._client.create_request(&#39;POST&#39;, url, query_params=query_params, headers=headers, body=body)
+    return self.send_request(request, skip_auth_check=skip_auth_check)</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.put"><code class="name flex">
+<span>def <span class="ident">put</span></span>(<span>self, url, body=None, query_params=None, headers=None, skip_auth_check=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def put(self, url, body=None, query_params=None, headers=None, skip_auth_check=False):
+    request = self._client.create_request(&#39;PUT&#39;, url, query_params=query_params, headers=headers, body=body)
+    return self.send_request(request, skip_auth_check=skip_auth_check)</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.refresh"><code class="name flex">
+<span>def <span class="ident">refresh</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Refreshes the authentication tokens.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Response</code></dt>
+<dd>The response object containing refreshed authentication data if successful.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>Exception</code></dt>
+<dd>If the refresh token has expired or if any error occurs during the refresh process.</dd>
+</dl>
+<h2 id="note">Note</h2>
+<ul>
+<li>This method checks if the refresh token is still valid using <code>_auth.refresh_token_valid()</code>.</li>
+<li>Constructs the request body with the grant type as 'refresh_token' and includes the refresh token.</li>
+<li>Sends the token refresh request using <code>_request_token</code> at this '/restapi/oauth/token end point.</li>
+<li>Triggers the refreshSuccess or refreshError event based on the outcome of the refresh attempt.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def refresh(self):
+    &#34;&#34;&#34;
+        Refreshes the authentication tokens.
+
+        Returns:
+            Response: The response object containing refreshed authentication data if successful.
+
+        Raises:
+            Exception: If the refresh token has expired or if any error occurs during the refresh process.
+
+        Note:
+            - This method checks if the refresh token is still valid using `_auth.refresh_token_valid()`.
+            - Constructs the request body with the grant type as &#39;refresh_token&#39; and includes the refresh token.
+            - Sends the token refresh request using `_request_token` at this &#39;/restapi/oauth/token end point.
+            - Triggers the refreshSuccess or refreshError event based on the outcome of the refresh attempt.
+    &#34;&#34;&#34;
+    try:
+        if not self._auth.refresh_token_valid():
+            raise Exception(&#39;Refresh token has expired&#39;)
+        response = self._request_token(TOKEN_ENDPOINT, body={
+            &#39;grant_type&#39;: &#39;refresh_token&#39;,
+            &#39;refresh_token&#39;: self._auth.refresh_token(),
+            &#39;access_token_ttl&#39;: ACCESS_TOKEN_TTL,
+            &#39;refresh_token_ttl&#39;: REFRESH_TOKEN_TTL
+        })
+        self._auth.set_data(response.json_dict())
+        self.trigger(Events.refreshSuccess, response)
+        return response
+    except Exception as e:
+        self.trigger(Events.refreshError, e)
+        raise e</code></pre>
+</details>
+</dd>
+<dt id="ringcentral.platform.platform.Platform.send_request"><code class="name flex">
+<span>def <span class="ident">send_request</span></span>(<span>self, request, skip_auth_check=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_request(self, request, skip_auth_check=False):
+    return self._client.send(self.inflate_request(request, skip_auth_check=skip_auth_check))</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ringcentral.platform" href="index.html">ringcentral.platform</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ringcentral.platform.platform.Platform" href="#ringcentral.platform.platform.Platform">Platform</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ringcentral.platform.platform.Platform.auth" href="#ringcentral.platform.platform.Platform.auth">auth</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.create_url" href="#ringcentral.platform.platform.Platform.create_url">create_url</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.delete" href="#ringcentral.platform.platform.Platform.delete">delete</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.get" href="#ringcentral.platform.platform.Platform.get">get</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.inflate_request" href="#ringcentral.platform.platform.Platform.inflate_request">inflate_request</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.logged_in" href="#ringcentral.platform.platform.Platform.logged_in">logged_in</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.login" href="#ringcentral.platform.platform.Platform.login">login</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.login_url" href="#ringcentral.platform.platform.Platform.login_url">login_url</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.logout" href="#ringcentral.platform.platform.Platform.logout">logout</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.patch" href="#ringcentral.platform.platform.Platform.patch">patch</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.post" href="#ringcentral.platform.platform.Platform.post">post</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.put" href="#ringcentral.platform.platform.Platform.put">put</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.refresh" href="#ringcentral.platform.platform.Platform.refresh">refresh</a></code></li>
+<li><code><a title="ringcentral.platform.platform.Platform.send_request" href="#ringcentral.platform.platform.Platform.send_request">send_request</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
