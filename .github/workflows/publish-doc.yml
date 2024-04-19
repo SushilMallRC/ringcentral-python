@@ -41,10 +41,10 @@ jobs:
            python -m pip install python-dotenv
            pip install -r requirements.txt
            pip install -r requirements-dev.txt
-           pdoc --html --output-dir ./docs ./ringcentral
+           pdoc --html --output-dir ./ringcentral ./ringcentral
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./ringcentral
