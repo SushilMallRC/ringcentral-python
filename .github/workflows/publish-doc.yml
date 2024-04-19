@@ -33,6 +33,7 @@ jobs:
           #Activate virtual environment
             source venv/bin/activate
           #Install dependencies
+           python -m pip install python-dotenv
            pip install -r requirements.txt
            pdoc --html --output-dir ./docs ./ringcentral
 
