@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - refactor-pdoc
   pull_request:
     branches:
       - master
