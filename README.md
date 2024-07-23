@@ -1,4 +1,4 @@
-# RingCentral SDK for Python
+# RingCentral SDK for Pythons
 
 [![Unit Tests](https://github.com/ringcentral/ringcentral-python/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/ringcentral/ringcentral-python/actions/workflows/unit-tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/ringcentral/ringcentral-python/badge.svg?branch=master)](https://coveralls.io/github/ringcentral/ringcentral-python?branch=master)
